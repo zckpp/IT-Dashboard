@@ -6,9 +6,9 @@ Display weather in next 5 days using weatherbit.
 
 ## Note
 
-For readCalendar in API service, set const TODAY and TOMORROW so that it only display today's schedule in dashboard.
+For `readCalendar` in API service, set const `TODAY` and `TOMORROW` so that it only display today's schedule in dashboard.
 
-In dashboard component, set function loopScreen so that when event list is longer than TV screen, the window will loop down to bottom then go back up.
+In dashboard component, set function `loopScreen` so that when event list is longer than TV screen, the window will loop down to bottom then go back up.
 
 I setTimeout for 3 seconds to call loopScreen otherwise the DOM is not loaded fully thus DOM height is not correct.
 
