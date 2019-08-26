@@ -1,0 +1,7 @@
+<mat-list>
+  <mat-list-item *ngFor="let meeting of meetings | async" [class]="meeting.room">
+    <div mat-line><h1>{{ meeting.time | date:'shortTime' }} to {{ meeting.end | date:'shortTime' }},  {{ meeting.sum }}</h1></div>
+    <div mat-line>Location: {{ meeting.loc }}</div>
+    <div mat-line *ngIf="meeting.organizer !== ''">Organizer: {{ meeting.organizer }}</div>
+  </mat-list-item>
+</mat-list>

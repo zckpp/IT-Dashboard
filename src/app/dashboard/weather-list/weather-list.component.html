@@ -1,0 +1,9 @@
+<div class="weathers">
+  <div class="weather-list">
+    <div *ngFor="let weather of weathers | async" class="weather">
+      <div>{{ weather.valid_date }}</div>
+      <img class="weather-icon" src="https://www.weatherbit.io/static/img/icons/{{ weather.weather.icon }}.png"/>
+      <div>{{ weather.max_temp }}</div>
+    </div>
+  </div>
+</div>

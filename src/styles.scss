@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+$carnegie-dark-blue: #163671;
+$carnegie-light-blue: #5eb6cd;
+$carnegie-brown: #c49a6c;
+$carnegie-green: #96ca4f;
+$background-grey: #fdfdfd;
+
+.wrapper {
+  font-family: 'Poppins', sans-serif;
+  width: 85%;
+  margin: 0 auto;
+  @media screen and (max-width: 1400px) {
+    width: 95%;
+  }
+  .header {
+    .logo {
+      max-width: 50px;
+    }
+    span {
+      margin-left: 20px;
+      font-size: 20px;
+      position: relative;
+      top: -15px;
+      @media screen and (max-width: 1400px) {
+        font-size: 16px;
+      }
+    }
+    .circle {
+      border-radius: 0;
+      background: white;
+      border: 1px solid gray;
+      display: inline-block;
+      width: 100px;
+      height: 10px;
+      &.color {
+        border-radius: 0;
+        background: $carnegie-green;
+        border: none;
+      }
+      &.blue {
+        border-radius: 0;
+        background: $carnegie-light-blue;
+        border: none;
+      }
+    }
+  }
+  h1.nothing {
+    text-align: center;
+    padding: 20px;
+  }
+  // override mat list
+  .mat-list-base {
+    padding: 0;
+    font-size: 20px;
+    mat-list-item {
+      h1 {
+        margin-top: 0;
+      }
+      .mat-list-item-content {
+        padding: 20px;
+        background: $carnegie-green;
+      }
+    }
+    [class="1"] {
+      .mat-list-item-content {
+        background: white;
+      }
+    }
+    [class="3"] {
+      .mat-list-item-content {
+        background: $carnegie-light-blue;
+      }
+    }
+  }
+  .list-group {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 30px;
+  }
+  .mat-card {
+    padding: 0;
+  }
+  .side {
+    position: fixed;
+    left: 0;
+    width: 15%;
+    .weather-date {
+      width: 50%;
+      float: left;
+    }
+    .weather-list {
+      .weather {
+        margin-bottom: 10px;
+        margin-left: 15px;
+        div {
+          margin-left: 10px;
+        }
+        .weather-icon {
+          width: 50px;
+        }
+      }
+    }
+    @media screen and (max-width: 1400px) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<div class="header">
+  <img class="logo" src="./assets/image/site-logo-color.png" />
+  <span>Today's agenda</span>
+  <span>1st Floor Conference Room <div class="circle"></div></span>
+  <span>3rd Floor Conference Room <div class="circle color"></div></span>
+  <span>EventBooking <div class="circle blue"></div></span>
+</div>
+<br>
+<div class="side">
+  <app-weather-list [weathers]="weathers$"></app-weather-list>
+</div>
+<mat-card>
+  <div *ngIf="(meetings$ | async)?.length == 0"><h1 class="nothing">We got nothing!</h1></div>
+  <app-meeting-list [meetings]="meetings$"></app-meeting-list>
+</mat-card>
