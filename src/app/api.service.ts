@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {tap, map } from 'rxjs/operators';
+import { tap, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  CALENDAR = 'calendar-api-url';
-  WEATHER = 'weather-api-url';
+  STATUS = '';
+  CALENDAR = '';
+  WEATHER = '';
   constructor(private httpClient: HttpClient) { }
 
   readCalendar(): Observable<any> {
@@ -73,5 +74,9 @@ export class ApiService {
         });
       })
     );
+  }
+  readStatus(): Observable<any> {
+    // @ts-ignore
+    return this.httpClient.get<any>(this.STATUS, {'responseType': 'html'});
   }
 }

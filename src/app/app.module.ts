@@ -10,6 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MeetingListComponent } from './dashboard/meeting-list/meeting-list.component';
 import { WeatherListComponent } from './dashboard/weather-list/weather-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { WeatherListComponent } from './dashboard/weather-list/weather-list.comp
     BrowserAnimationsModule,
     MatCardModule,
     MatListModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

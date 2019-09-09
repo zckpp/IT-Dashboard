@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
 
   meetings$: Observable<any>;
   weathers$: Observable<any>;
+  status$: Observable<any>;
 
   constructor(
     private apiService: ApiService,
@@ -19,6 +20,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.meetings$ = this.apiService.readCalendar();
     this.weathers$ = this.apiService.readWeather();
+    this.status$ = this.apiService.readStatus();
     setInterval(() => {
       location.reload();
     }, 300000);

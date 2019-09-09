@@ -1,15 +1,33 @@
-<div class="header">
-  <img class="logo" src="./assets/image/site-logo-color.png" />
-  <span>Today's agenda</span>
-  <span>1st Floor Conference Room <div class="circle"></div></span>
-  <span>3rd Floor Conference Room <div class="circle color"></div></span>
-  <span>EventBooking <div class="circle blue"></div></span>
-</div>
-<br>
-<div class="side">
-  <app-weather-list [weathers]="weathers$"></app-weather-list>
-</div>
-<mat-card>
-  <div *ngIf="(meetings$ | async)?.length == 0"><h1 class="nothing">We got nothing!</h1></div>
-  <app-meeting-list [meetings]="meetings$"></app-meeting-list>
-</mat-card>
+<ngb-carousel interval="10000" [showNavigationArrows]="false" [showNavigationIndicators]="false">
+  <ng-template ngbSlide>
+    <div class="header">
+      <img class="logo" src="./assets/image/site-logo-color.png"/>
+      <span>Today's agenda</span>
+      <span>1st Floor Conference Room <div class="circle"></div></span>
+      <span>3rd Floor Conference Room <div class="circle color"></div></span>
+      <span>EventBooking <div class="circle blue"></div></span>
+    </div>
+    <br>
+    <div class="side">
+      <app-weather-list [weathers]="weathers$"></app-weather-list>
+    </div>
+    <mat-card>
+      <div *ngIf="(meetings$ | async)?.length == 0"><h1 class="nothing">We got nothing!</h1></div>
+      <app-meeting-list [meetings]="meetings$"></app-meeting-list>
+    </mat-card>
+  </ng-template>
+
+  <ng-template ngbSlide>
+    <div class="header">
+      <img class="logo" src="./assets/image/site-logo-color.png"/>
+      <span>Web Services Status</span>
+    </div>
+    <br>
+    <mat-card>
+      <br>
+      <div [innerHTML]="(status$ | async)?.length > 0 ? (status$ | async) : 'status is loading'"
+           class="status-wrapper"></div>
+      <br>
+    </mat-card>
+  </ng-template>
+</ngb-carousel>

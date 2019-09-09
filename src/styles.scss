@@ -13,7 +13,11 @@ $background-grey: #fdfdfd;
   @media screen and (max-width: 1400px) {
     width: 95%;
   }
+  .carousel-inner {
+    overflow: visible;
+  }
   .header {
+    margin-top: 20px;
     .logo {
       max-width: 50px;
     }
@@ -21,7 +25,6 @@ $background-grey: #fdfdfd;
       margin-left: 20px;
       font-size: 20px;
       position: relative;
-      top: -15px;
       @media screen and (max-width: 1400px) {
         font-size: 16px;
       }
@@ -52,24 +55,30 @@ $background-grey: #fdfdfd;
   // override mat list
   .mat-list-base {
     padding: 0;
-    font-size: 20px;
-    mat-list-item {
+    mat-list-item.mat-list-item {
+      height: auto;
       h1 {
         margin-top: 0;
       }
       .mat-list-item-content {
         padding: 20px;
         background: $carnegie-green;
+        .mat-list-text {
+          .mat-line {
+            font-size: 20px;
+          }
+        }
       }
-    }
-    [class="1"] {
-      .mat-list-item-content {
-        background: white;
+      &.first {
+        .mat-list-item-content {
+          background: white;
+
+        }
       }
-    }
-    [class="3"] {
-      .mat-list-item-content {
-        background: $carnegie-light-blue;
+      &.eb {
+        .mat-list-item-content {
+          background: $carnegie-light-blue;
+        }
       }
     }
   }
@@ -102,6 +111,56 @@ $background-grey: #fdfdfd;
     }
     @media screen and (max-width: 1400px) {
       display: none;
+    }
+  }
+  // status table
+  .status-wrapper {
+    padding: 0 5%;
+    table {
+      font-size: 25px;
+      width: 100%;
+      tr {
+        padding-top: 5px;
+        td {
+          text-align: left;
+          &.statusEven {
+            background-color: #eee;
+          }
+          &.miniStatusPENDING     {
+            background-color: #acacac;
+            padding: 10px;
+          }
+          &.miniStatusOK          {
+            background-color: #88d066;
+            padding: 10px;
+          }
+          &.miniStatusUNKNOWN     {
+            background-color: #ffbb55;
+            padding: 10px;
+          }
+          &.miniStatusWARNING     {
+            background-color: #ffff00;
+            padding: 10px;
+          }
+          &.miniStatusCRITICAL    {
+            background-color: #f88888;
+            padding: 10px;
+          }
+
+          &.miniStatusUP          {
+            background-color: #88d066;
+            padding: 10px;
+          }
+          &.miniStatusDOWN        {
+            background-color: #f88888;
+            padding: 10px;
+          }
+          &.miniStatusUNREACHABLE {
+            padding: 10px;
+            background-color: #ffbb55;
+          }
+        }
+      }
     }
   }
 }
